@@ -1,8 +1,8 @@
-FROM python
+FROM ubuntu 
 
-WORKDIR /usr/src/app
+RUN apt update && apt install -y python3 && apt clean 
 
-COPY app.py /usr/src/app
+COPY app.py /opt/main.py
 
-CMD ["python","./app.py"]
+CMD python3 /opt/main.py 
 
